@@ -1,4 +1,5 @@
 import express from 'express';
+import { MongoClient } from 'mongodb';
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
 import bodyParser from 'body-parser';
@@ -10,8 +11,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-// MongoDB connection
-mongoose.connect('mongodb://localhost:27017/userDetails')
+
+mongoose.connect('mongodb+srv://sanjayaadhith007:admin123@cluster0.xvtb4xx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
